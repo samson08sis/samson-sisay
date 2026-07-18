@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -70,6 +71,7 @@ export default function RootLayout({
 
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }
