@@ -1,32 +1,31 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg-app: #f4f5f7;
+  --color-bg-card: #ffffff;
+  --color-text-main: #1c1d21;
+  --color-text-muted: #525866;
+  --color-border-line: #e2e4e9;
+
+  /* Animations for navigation */
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root,
+.dark {
+  &.dark,
+  &:where(.dark, .dark *) {
+    --color-bg-app: #121316;
+    --color-bg-card: #16171b;
+    --color-text-main: #e4e4e7;
+    --color-text-muted: #a1a1aa;
+    --color-border-line: #27272a;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-@theme {
-  /* custom animations */
-  --animate-spin-slow: spin 4s linear infinite;
-  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: var(--color-bg-app);
+  color: var(--color-text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

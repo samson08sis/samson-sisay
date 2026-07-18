@@ -14,9 +14,9 @@ export default function Navigation() {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const links: NavLink[] = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "~/home", href: "#home" },
+    { name: "~/projects", href: "#projects" },
+    { name: "~/contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -28,58 +28,54 @@ export default function Navigation() {
         setIsModalOpen(false);
       }
     }
-    if (isModalOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+    if (isModalOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isModalOpen]);
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
+      <header className="sticky top-0 z-40 w-full border-b border-zinc-800/60 bg-[#121316]/75 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3.5">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-[12px] p-[1.5px] transition-transform duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              aria-label="View profile card">
-              <span className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#3b82f6_0%,#1d4ed8_25%,#60a5fa_50%,#1e3a8a_75%,#3b82f6_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#60a5fa_0%,#3b82f6_25%,#93c5fd_50%,#1d4ed8_75%,#60a5fa_100%)]" />
+              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-[12px] p-[1.5px] transition-all duration-200 hover:scale-[1.03] active:scale-95"
+              aria-label="Open profile modal">
+              <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#10b981_0%,#047857_25%,#34d399_50%,#064e3b_75%,#10b981_100%)]" />
 
-              <div className="relative flex h-full w-full items-center justify-center rounded-[11px] bg-white dark:bg-gray-950 transition-colors duration-300 group-hover:bg-opacity-90">
+              <div className="relative flex h-full w-full items-center justify-center rounded-[11px] bg-[#16171a]">
                 <Image
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
-                  alt="Samson Sisay Profile"
+                  src="/images/profile.jpg"
+                  alt="Samson Sisay"
                   width={36}
                   height={36}
-                  className="h-full w-full rounded-[11px] object-cover"
+                  className="h-full w-full rounded-[11px] object-cover filter brightness-95"
                 />
               </div>
-
-              <span className="absolute -inset-1 rounded-[13px] bg-blue-500/30 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100 animate-pulse-slow" />
             </button>
 
-            <div className="flex flex-col">
-              <span className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+            <div className="flex flex-col select-none">
+              <span className="text-sm font-semibold tracking-tight text-zinc-100">
                 Samson Sisay
               </span>
               <div className="flex items-center gap-1.5">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 </span>
-                <span className="text-[10px] font-medium text-emerald-600 dark:text-emerald-400">
+                <span className="font-mono text-[10px] tracking-wide text-emerald-400/90">
                   Available to work
                 </span>
               </div>
             </div>
           </div>
 
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6 font-mono text-xs">
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-gray-950 dark:text-gray-400 dark:hover:text-white transition-colors duration-150">
+                className="text-zinc-400 hover:text-emerald-400 transition-colors duration-150">
                 {link.name}
               </a>
             ))}
@@ -87,10 +83,10 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-lg p-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 md:hidden dark:text-gray-400 dark:hover:bg-gray-900"
-            aria-label="Toggle Navigation Menu">
+            className="rounded-lg p-2 text-zinc-400 hover:bg-zinc-800/40 hover:text-zinc-100 md:hidden transition"
+            aria-label="Toggle menu">
             <svg
-              className="h-6 w-6"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
@@ -114,14 +110,14 @@ export default function Navigation() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden border-b border-gray-200 bg-white px-4 py-4 dark:border-gray-800 dark:bg-gray-950 animate-fade-in">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden border-b border-zinc-800/80 bg-[#121316] px-4 py-4 font-mono text-xs">
+            <nav className="flex flex-col space-y-3.5">
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-base font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                  className="text-zinc-400 hover:text-emerald-400 transition-colors">
                   {link.name}
                 </a>
               ))}
@@ -130,84 +126,107 @@ export default function Navigation() {
         )}
       </header>
 
+      {/* PROFILE CARD MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
           <div
             ref={modalRef}
-            className="w-full max-w-sm transform rounded-2xl border border-gray-100 bg-white p-6 shadow-2xl transition-all dark:border-gray-800 dark:bg-gray-900 animate-slide-up">
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3.5">
-                <div className="relative h-14 w-14 overflow-hidden rounded-[16px] border-2 border-blue-500">
-                  <Image
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
-                    alt="Samson Sisay"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                    Samson Sisay
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Cross-Platform App Developer
-                  </p>
-                </div>
+            className="w-full max-w-md overflow-hidden rounded-xl border border-zinc-800 bg-[#16171b] shadow-2xl transition-all">
+            {/* Terminal Top Window Deck */}
+            <div className="flex items-center justify-between border-b border-zinc-800/80 bg-[#121316]/50 px-4 py-3">
+              <div className="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>identity_manifest.sh</span>
               </div>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-200 transition-colors"
+                className="rounded p-1 text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200 transition-colors"
                 aria-label="Close modal">
                 <svg
-                  className="h-5 w-5"
+                  className="h-3.5 w-3.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={2.5}
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               </button>
             </div>
 
-            <div className="mt-5 space-y-4">
-              <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                Passionate about building highly polished interactive web apps.
-                Focusing deeply on frontend engineering architectures and system
-                layout patterns.
+            {/* Modal Body Profile Content */}
+            <div className="p-6">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+                {/* Large Profile Image Deck */}
+                <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-zinc-700/60 p-[2px] bg-gradient-to-b from-zinc-700 to-zinc-900 shadow-md">
+                  <Image
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+                    alt="Samson Sisay"
+                    width={68}
+                    height={68}
+                    className="h-full w-full rounded-[10px] object-cover"
+                  />
+                </div>
+
+                {/* Identity Metadata Headers */}
+                <div className="text-center sm:text-left space-y-1">
+                  <h3 className="text-lg font-bold text-zinc-100 tracking-tight">
+                    Samson Sisay
+                  </h3>
+                  <div className="font-mono text-xs text-emerald-400 font-medium">
+                    ~/systems_engineer
+                  </div>
+
+                  {/* Status Indicator */}
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/5 border border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-mono tracking-wide text-emerald-400">
+                    <span className="h-1 w-1 rounded-full bg-emerald-400 animate-pulse" />
+                    status: ready_for_hire
+                  </div>
+                </div>
+              </div>
+
+              {/* Minimal Bio Summary */}
+              <p className="mt-5 text-xs leading-relaxed text-zinc-400 text-center sm:text-left">
+                Engineering fast, scalable interface layers and deterministic
+                runtime environments. Focused on type-safe frontend core
+                layouts.
               </p>
 
-              <div className="border-t border-gray-100 pt-4 dark:border-gray-800 text-xs text-gray-500 dark:text-gray-400 space-y-2">
-                <div className="flex justify-between">
-                  <span>Based in:</span>
-                  <span className="font-semibold text-gray-800 dark:text-gray-200">
-                    Ethiopia
+              {/* Core Contact Parameters Env Block */}
+              <div className="mt-5 rounded-lg bg-[#121316] border border-zinc-800/60 p-4 space-y-2.5 font-mono text-[11px] text-zinc-400">
+                <div className="flex items-center justify-between py-1 border-b border-zinc-900">
+                  <span className="text-zinc-500">EMAIL:</span>
+                  <a
+                    href="mailto:sams1307wolde@gmail.com"
+                    className="text-zinc-200 hover:text-emerald-400 transition-colors font-sans font-medium">
+                    sams1307wolde@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center justify-between py-1 border-b border-zinc-900">
+                  <span className="text-zinc-500">LOCALE:</span>
+                  <span className="text-zinc-300 font-sans">
+                    Addis Ababa, ET
                   </span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Primary Stack:</span>
-                  <span className="font-semibold text-blue-600 dark:text-blue-400">
-                    TypeScript, Next.js, React
+                <div className="flex items-center justify-between py-1">
+                  <span className="text-zinc-500">TELEMETRY:</span>
+                  <span className="text-emerald-400/90 font-medium">
+                    [GitHub, LinkedIn]
                   </span>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-6 flex gap-3">
-              <a
-                href="#contact"
-                onClick={() => setIsModalOpen(false)}
-                className="flex-1 rounded-lg bg-blue-600 py-2.5 text-center text-xs font-semibold text-white hover:bg-blue-500 transition-colors">
-                Hire Me
-              </a>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="flex-1 rounded-lg border border-gray-200 py-2.5 text-xs font-semibold text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors">
-                Close Profile
-              </button>
+              {/* Core Handshake CTA Block */}
+              <div className="mt-6">
+                <a
+                  href="mailto:sams1307wolde@gmail.com"
+                  className="flex w-full items-center justify-center rounded bg-zinc-100 px-4 py-2.5 text-center text-xs font-bold text-zinc-950 hover:bg-zinc-200 transition duration-150 shadow-sm">
+                  establish_handshake()
+                </a>
+              </div>
             </div>
           </div>
         </div>
