@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavLink {
   name: string;
@@ -39,7 +40,7 @@ export default function Navigation() {
           <div className="flex items-center gap-3.5">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-[12px] p-[1.5px] transition-all duration-200 hover:scale-[1.03] active:scale-95"
+              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl p-[1.5px] transition-all duration-200 hover:scale-[1.03] active:scale-95"
               aria-label="Open profile modal">
               <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#10b981_0%,#047857_25%,#34d399_50%,#064e3b_75%,#10b981_100%)]" />
 
@@ -72,12 +73,12 @@ export default function Navigation() {
 
           <nav className="hidden md:flex space-x-6 font-mono text-xs">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-zinc-400 hover:text-emerald-400 transition-colors duration-150">
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -161,9 +162,9 @@ export default function Navigation() {
             <div className="p-6">
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 {/* Large Profile Image Deck */}
-                <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-zinc-700/60 p-[2px] bg-gradient-to-b from-zinc-700 to-zinc-900 shadow-md">
+                <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl border border-zinc-700/60 p-0.5 bg-linear-to-b from-zinc-700 to-zinc-900 shadow-md">
                   <Image
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+                    src="/images/profile.jpg"
                     alt="Samson Sisay"
                     width={68}
                     height={68}
@@ -177,7 +178,7 @@ export default function Navigation() {
                     Samson Sisay
                   </h3>
                   <div className="font-mono text-xs text-emerald-400 font-medium">
-                    ~/systems_engineer
+                    ~/fullstack_developer
                   </div>
 
                   {/* Status Indicator */}
@@ -224,7 +225,7 @@ export default function Navigation() {
                 <a
                   href="mailto:sams1307wolde@gmail.com"
                   className="flex w-full items-center justify-center rounded bg-zinc-100 px-4 py-2.5 text-center text-xs font-bold text-zinc-950 hover:bg-zinc-200 transition duration-150 shadow-sm">
-                  establish_handshake()
+                  Contact Me
                 </a>
               </div>
             </div>
