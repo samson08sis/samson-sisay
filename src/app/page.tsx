@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
@@ -297,7 +297,7 @@ export default function Home() {
                 <a
                   href="mailto:sams1307wolde@gmail.com"
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded border border-emerald-500/30 bg-emerald-500/10 px-6 py-3 text-center text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-all duration-150">
-                  <span>./initialize_handshake.exe</span>
+                  <span>Contact Me</span>
                 </a>
               </div>
             </div>
