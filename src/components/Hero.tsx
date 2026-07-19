@@ -1,34 +1,38 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="flex min-h-[70vh] flex-col justify-center px-4 sm:px-6">
-      <div className="mx-auto max-w-4xl text-center md:text-left">
-        <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 dark:bg-blue-900/30 dark:text-blue-300">
-          Available for new opportunities
-        </span>
+      className="py-20 md:py-28 flex flex-col justify-center text-center md:text-left border-b border-zinc-900">
+      <div className="max-w-3xl space-y-6">
+        <div className="inline-flex mx-auto md:mx-0 items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 text-[11px] font-mono tracking-wide text-emerald-400 w-fit">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          status: active
+        </div>
 
-        <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
-          Building fast, modern interfaces for the web.
+        <h1 className="text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-6xl leading-[1.05]">
+          Building fast, predictable <br className="hidden sm:inline" />
+          digital interfaces.
         </h1>
 
-        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400 max-w-2xl">
-          Hi, I&apos;m a Frontend Engineer specializing in Next.js, TypeScript,
-          and fluid animations. I build scalable, high-performance web
-          applications with clean, interactive UX.
+        <p className="text-base leading-relaxed text-zinc-400 max-w-xl mx-auto md:mx-0">
+          Hi, I&apos;m a Full-Stack Developer focused on building minimal
+          overhead, type-safe web and cross-platform mobile applications with
+          exceptional technical architecture.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-          <a
+        <div className="pt-2 flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
+          <Link
             href="#projects"
-            className="w-full sm:w-auto rounded-lg bg-gray-900 px-6 py-3.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition dark:bg-white dark:text-gray-950 dark:hover:bg-gray-100">
+            className="w-full sm:w-auto rounded bg-zinc-100 px-6 py-3 text-center text-xs font-bold text-zinc-950 hover:bg-zinc-200 transition duration-150">
             View Projects
-          </a>
-          <a
+          </Link>
+          <Link
             href="#contact"
-            className="w-full sm:w-auto rounded-lg px-6 py-3.5 text-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 transition dark:text-white dark:ring-gray-700 dark:hover:bg-gray-900">
+            className="w-full sm:w-auto rounded border border-zinc-800 bg-zinc-900/40 px-6 py-3 text-center text-xs font-bold text-zinc-300 hover:bg-zinc-800/60 transition duration-150">
             Contact Me
-          </a>
+          </Link>
         </div>
       </div>
     </section>

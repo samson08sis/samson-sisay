@@ -1,5 +1,6 @@
 "use client";
 
+import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import ProjectCard from "@/components/ProjectCard";
 import { Project } from "@/types";
@@ -67,40 +68,7 @@ export default function Home() {
 
       <main className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* --- HERO SECTION --- */}
-        <section
-          id="home"
-          className="py-20 md:py-28 flex flex-col justify-center text-center md:text-left border-b border-zinc-900">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex mx-auto md:mx-0 items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 text-[11px] font-mono tracking-wide text-emerald-400 w-fit">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              system_status: active
-            </div>
-
-            <h1 className="text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-6xl leading-[1.05]">
-              Building fast, predictable <br className="hidden sm:inline" />
-              digital interfaces.
-            </h1>
-
-            <p className="text-base leading-relaxed text-zinc-400 max-w-xl mx-auto md:mx-0">
-              Hi, I&apos;m a Full-Stack Developer focused on building minimal
-              overhead, type-safe web and mobile applications with exceptional
-              technical architecture.
-            </p>
-
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
-              <a
-                href="#projects"
-                className="w-full sm:w-auto rounded bg-zinc-100 px-6 py-3 text-center text-xs font-bold text-zinc-950 hover:bg-zinc-200 transition duration-150">
-                view_projects()
-              </a>
-              <a
-                href="#contact"
-                className="w-full sm:w-auto rounded border border-zinc-800 bg-zinc-900/40 px-6 py-3 text-center text-xs font-bold text-zinc-300 hover:bg-zinc-800/60 transition duration-150">
-                contact_me
-              </a>
-            </div>
-          </div>
-        </section>
+        <Hero />
 
         {/* --- WHAT I DO (CAPABILITIES) SECTION --- */}
         <section id="capabilities" className="py-20 border-b border-zinc-900">
@@ -194,7 +162,7 @@ export default function Home() {
             {/* Timeline Item 1 */}
             <div className="relative group">
               {/* Node Indicator */}
-              <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#16171b] border border-zinc-700 group-hover:border-emerald-500 transition-colors">
+              <span className="absolute -left-7.75 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#16171b] border border-zinc-700 group-hover:border-emerald-500 transition-colors">
                 <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 group-hover:bg-emerald-400" />
               </span>
 
@@ -218,7 +186,7 @@ export default function Home() {
 
             {/* Timeline Item 2 (Optional Example - Remove or adjust if needed) */}
             <div className="relative group">
-              <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#16171b] border border-zinc-700 group-hover:border-emerald-500 transition-colors">
+              <span className="absolute -left-7.75 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#16171b] border border-zinc-700 group-hover:border-emerald-500 transition-colors">
                 <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 group-hover:bg-emerald-400" />
               </span>
 
