@@ -168,23 +168,23 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <h3 className="text-sm font-bold text-zinc-200 group-hover:text-emerald-400 transition-colors">
-                  B.Sc. in Software Engineering
+                  B.Sc. in Computer Science
                 </h3>
                 <span className="font-mono text-xs text-zinc-500 bg-[#16171b] border border-zinc-800 px-2 py-0.5 rounded w-fit">
                   2022 - 2026
                 </span>
               </div>
               <p className="font-mono text-[11px] text-zinc-500 mt-0.5">
-                Addis Ababa University
+                CPU Business & Information College
               </p>
               <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
-                Focused heavily on distributed computing paradigms, advanced
-                data structures, database optimization design models, and secure
+                Focused heavily on object oriented paradigms, advanced data
+                structures, database optimization design models, and secure
                 mobile application architectures.
               </p>
             </div>
 
-            {/* Timeline Item 2 (Optional Example - Remove or adjust if needed) */}
+            {/* Timeline Item 2 */}
             <div className="relative group">
               <span className="absolute -left-7.75 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#16171b] border border-zinc-700 group-hover:border-emerald-500 transition-colors">
                 <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 group-hover:bg-emerald-400" />
@@ -192,14 +192,37 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <h3 className="text-sm font-bold text-zinc-200 group-hover:text-emerald-400 transition-colors">
-                  Autonomous Specialized Systems Training
+                  Android Development
                 </h3>
                 <span className="font-mono text-xs text-zinc-500 bg-[#16171b] border border-zinc-800 px-2 py-0.5 rounded w-fit">
-                  2021
+                  2023
                 </span>
               </div>
               <p className="font-mono text-[11px] text-zinc-500 mt-0.5">
-                Advanced Architecture Labs
+                Udacity
+              </p>
+              <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
+                Android Development in Java and XML, layout design, dynamic data
+                display, map integration and authentication.
+              </p>
+            </div>
+
+            {/* Timeline Item 3 */}
+            <div className="relative group">
+              <span className="absolute -left-7.75 top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#16171b] border border-zinc-700 group-hover:border-emerald-500 transition-colors">
+                <span className="h-1.5 w-1.5 rounded-full bg-zinc-500 group-hover:bg-emerald-400" />
+              </span>
+
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <h3 className="text-sm font-bold text-zinc-200 group-hover:text-emerald-400 transition-colors">
+                  Artificial Intelligence
+                </h3>
+                <span className="font-mono text-xs text-zinc-500 bg-[#16171b] border border-zinc-800 px-2 py-0.5 rounded w-fit">
+                  2026
+                </span>
+              </div>
+              <p className="font-mono text-[11px] text-zinc-500 mt-0.5">
+                ALX Ethiopia
               </p>
               <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
                 Immersive specialization detailing RAG pattern integration,
