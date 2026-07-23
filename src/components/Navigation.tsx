@@ -52,7 +52,7 @@ function ProfileCard({
             {/* Large Profile Image Deck */}
             <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl border border-zinc-700/60 p-0.5 bg-linear-to-b from-zinc-700 to-zinc-900 shadow-md">
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile/samson-sisay.jpg"
                 alt="Samson Sisay"
                 width={68}
                 height={68}
@@ -161,7 +161,7 @@ export default function Navigation() {
 
               <div className="relative flex h-full w-full items-center justify-center rounded-[11px] bg-[#16171a]">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile/samson-sisay.jpg"
                   alt="Samson Sisay"
                   width={36}
                   height={36}

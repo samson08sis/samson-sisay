@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Samson Sisay Portfolio",
     images: [
       {
-        url: "/images/profile.jpg",
+        url: "/images/profile/samson-sisay.jpg",
         width: 1200,
         height: 630,
         alt: "Samson Sisay Portfolio",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Samson Sisay | Full-Stack Developer",
     description:
       "Explore software engineering projects, technical skills, and experience by Samson Sisay.",
-    images: ["/images/profile.jpg"],
+    images: ["/images/profile/samson-sisay.jpg"],
   },
   robots: {
     index: true,
