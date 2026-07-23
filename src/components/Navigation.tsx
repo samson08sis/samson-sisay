@@ -56,10 +56,15 @@ function ProfileCard({
                 alt="Samson Sisay"
                 width={68}
                 height={68}
-                className="h-full w-full rounded-[10px] object-cover"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                className="h-full w-full rounded-[10px] object-cover select-none pointer-events-none"
+              />
+              <div
+                className="absolute inset-0 z-10 select-none"
+                onContextMenu={(e) => e.preventDefault()}
               />
             </div>
-
             {/* Identity Metadata Headers */}
             <div className="text-center sm:text-left space-y-1">
               <h3 className="text-lg font-bold text-zinc-100 tracking-tight">
@@ -160,7 +165,13 @@ export default function Navigation() {
                   alt="Samson Sisay"
                   width={36}
                   height={36}
-                  className="h-full w-full rounded-[11px] object-cover filter brightness-95"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  className="h-full w-full rounded-[11px] object-cover filter brightness-95 select-none pointer-events-none"
+                />
+                <div
+                  className="absolute inset-0 z-10 select-none"
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
             </button>
