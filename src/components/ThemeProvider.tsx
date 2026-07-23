@@ -11,21 +11,41 @@ export default function ThemeProvider({
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (isDark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [isDark]);
+    const updateClassList = async () => {
+      const root = document.documentElement;
+
+      // Check saved preference or default to dark
+      const savedTheme = localStorage.getItem("theme");
+      const initialDark = savedTheme ? savedTheme === "dark" : true;
+
+      setIsDark(initialDark);
+
+      if (initialDark) {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+    };
+    updateClassList();
+  }, []);
 
   const onThemeChange = () => {
-    setIsDark((prev) => !prev);
+    const nextDark = !isDark;
+    setIsDark(nextDark);
+
+    const root = document.documentElement;
+    if (nextDark) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   };
 
   return (
     <>
-      {/* <ThemeToggle isDarkMode={isDark} onChange={onThemeChange} /> */}
+      <ThemeToggle isDarkMode={isDark} onChange={onThemeChange} />
       {children}
     </>
   );
