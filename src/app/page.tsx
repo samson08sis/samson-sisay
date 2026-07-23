@@ -70,7 +70,7 @@ export default function Home() {
         {/* --- HERO SECTION --- */}
         <Hero />
 
-        {/* --- WHAT I DO (CAPABILITIES) SECTION --- */}
+        {/* --- WHAT I DO SECTION --- */}
         <section id="capabilities" className="py-20 border-b border-zinc-900">
           <div className="mb-10 font-mono">
             <div className="text-[11px] text-emerald-400/90">
@@ -282,7 +282,7 @@ export default function Home() {
                   <div className="flex justify-between items-center py-1">
                     <span className="text-zinc-500">linkedin:</span>
                     <a
-                      href="https://www.linkedin.com/in/samson-sisay-b7623b37b/"
+                      href="https://www.linkedin.com/in/samson-sisay/"
                       target="_blank"
                       rel="noreferrer"
                       className="text-zinc-300 hover:text-emerald-400 transition-colors">
