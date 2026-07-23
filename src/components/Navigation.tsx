@@ -194,35 +194,55 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-lg p-2 text-zinc-400 hover:bg-zinc-800/40 hover:text-zinc-100 md:hidden transition"
+            className="relative h-9 w-9 flex items-center justify-center rounded-lg text-zinc-400 hover:bg-zinc-800/40 hover:text-zinc-100 md:hidden transition-colors"
             aria-label="Toggle menu">
+            {/* Hamburger Icon */}
             <svg
-              className="h-5 w-5"
+              className={`absolute h-5 w-5 transition-all duration-300 ease-in-out ${
+                isMenuOpen
+                  ? "rotate-90 opacity-0 scale-75"
+                  : "rotate-0 opacity-100 scale-100"
+              }`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+
+            {/* Close (X) Icon */}
+            <svg
+              className={`absolute h-5 w-5 transition-all duration-300 ease-in-out ${
+                isMenuOpen
+                  ? "rotate-0 opacity-100 scale-100"
+                  : "-rotate-90 opacity-0 scale-75"
+              }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden border-b border-zinc-800/80 bg-[#121316] px-4 py-4 font-mono text-xs">
-            <nav className="flex flex-col space-y-3.5">
+        {/* Mobile Menu Container */}
+        <div
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out md:hidden ${
+            isMenuOpen
+              ? "grid-rows-[1fr] opacity-100 border-b border-zinc-800/80"
+              : "grid-rows-[0fr] opacity-0 border-b border-transparent"
+          }`}>
+          <div className="overflow-hidden bg-[#121316]">
+            <nav className="flex flex-col space-y-3.5 px-4 py-4 font-mono text-xs">
               {links.map((link) => (
                 <a
                   key={link.name}
@@ -234,7 +254,7 @@ export default function Navigation() {
               ))}
             </nav>
           </div>
-        )}
+        </div>
       </header>
 
       {/* PROFILE CARD MODAL */}
