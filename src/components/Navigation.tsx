@@ -17,19 +17,19 @@ function ProfileCard({
   onClose: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/40 dark:bg-black/60 backdrop-blur-xs">
       <div
         ref={ref}
-        className="w-full max-w-md overflow-hidden rounded-xl border border-zinc-800 bg-[#16171b] shadow-2xl transition-all">
+        className="w-full max-w-md overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#16171b] shadow-2xl transition-all">
         {/* Terminal Top Window Deck */}
-        <div className="flex items-center justify-between border-b border-zinc-800/80 bg-[#121316]/50 px-4 py-3">
-          <div className="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-[#121316]/50 px-4 py-3">
+          <div className="flex items-center gap-1.5 font-mono text-[11px] text-zinc-500 dark:text-zinc-500">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-500 animate-pulse" />
             <span>identity_manifest.sh</span>
           </div>
           <button
             onClick={onClose}
-            className="rounded p-1 text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200 transition-colors"
+            className="rounded p-1 text-zinc-400 hover:bg-zinc-200 hover:text-zinc-700 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-200 transition-colors"
             aria-label="Close modal">
             <svg
               className="h-3.5 w-3.5"
@@ -50,7 +50,7 @@ function ProfileCard({
         <div className="p-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
             {/* Large Profile Image Deck */}
-            <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl border border-zinc-700/60 p-0.5 bg-linear-to-b from-zinc-700 to-zinc-900 shadow-md">
+            <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl border border-zinc-300 dark:border-zinc-700/60 p-0.5 bg-linear-to-b from-zinc-200 to-zinc-100 dark:from-zinc-700 dark:to-zinc-900 shadow-md">
               <Image
                 src="/images/profile/samson-sisay.jpg"
                 alt="Samson Sisay"
@@ -65,46 +65,51 @@ function ProfileCard({
                 onContextMenu={(e) => e.preventDefault()}
               />
             </div>
+
             {/* Identity Metadata Headers */}
             <div className="text-center sm:text-left space-y-1">
-              <h3 className="text-lg font-bold text-zinc-100 tracking-tight">
+              <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
                 Samson Sisay
               </h3>
-              <div className="font-mono text-xs text-emerald-400 font-medium">
+              <div className="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-medium">
                 ~/fullstack_developer
               </div>
 
               {/* Status Indicator */}
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/5 border border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-mono tracking-wide text-emerald-400">
-                <span className="h-1 w-1 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 border border-emerald-500/30 dark:border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-mono tracking-wide text-emerald-700 dark:text-emerald-400">
+                <span className="h-1 w-1 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                 status: ready_for_hire
               </div>
             </div>
           </div>
 
           {/* Minimal Bio Summary */}
-          <p className="mt-5 text-xs leading-relaxed text-zinc-400 text-center sm:text-left">
+          <p className="mt-5 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400 text-center sm:text-left">
             Engineering fast, scalable interface layers and deterministic
             runtime environments. Focused on type-safe frontend core layouts.
           </p>
 
           {/* Core Contact Parameters Env Block */}
-          <div className="mt-5 rounded-lg bg-[#121316] border border-zinc-800/60 p-4 space-y-2.5 font-mono text-[11px] text-zinc-400">
-            <div className="flex items-center justify-between py-1 border-b border-zinc-900">
-              <span className="text-zinc-500">EMAIL:</span>
+          <div className="mt-5 rounded-lg bg-zinc-50 dark:bg-[#121316] border border-zinc-200 dark:border-zinc-800/60 p-4 space-y-2.5 font-mono text-[11px] text-zinc-600 dark:text-zinc-400">
+            <div className="flex items-center justify-between py-1 border-b border-zinc-200 dark:border-zinc-900">
+              <span className="text-zinc-400 dark:text-zinc-500">EMAIL:</span>
               <a
                 href="mailto:sams1307wolde@gmail.com"
-                className="text-zinc-200 hover:text-emerald-400 transition-colors font-sans font-medium">
+                className="text-zinc-800 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-sans font-medium">
                 sams1307wolde@gmail.com
               </a>
             </div>
-            <div className="flex items-center justify-between py-1 border-b border-zinc-900">
-              <span className="text-zinc-500">LOCALE:</span>
-              <span className="text-zinc-300 font-sans">Addis Ababa, ET</span>
+            <div className="flex items-center justify-between py-1 border-b border-zinc-200 dark:border-zinc-900">
+              <span className="text-zinc-400 dark:text-zinc-500">LOCALE:</span>
+              <span className="text-zinc-700 dark:text-zinc-300 font-sans">
+                Addis Ababa, ET
+              </span>
             </div>
             <div className="flex items-center justify-between py-1">
-              <span className="text-zinc-500">TELEMETRY:</span>
-              <span className="text-emerald-400/90 font-medium">
+              <span className="text-zinc-400 dark:text-zinc-500">
+                TELEMETRY:
+              </span>
+              <span className="text-emerald-600 dark:text-emerald-400/90 font-medium">
                 [GitHub, LinkedIn]
               </span>
             </div>
@@ -114,7 +119,7 @@ function ProfileCard({
           <div className="mt-6">
             <a
               href="mailto:sams1307wolde@gmail.com"
-              className="flex w-full items-center justify-center rounded bg-zinc-100 px-4 py-2.5 text-center text-xs font-bold text-zinc-950 hover:bg-zinc-200 transition duration-150 shadow-sm">
+              className="flex w-full items-center justify-center rounded bg-zinc-900 dark:bg-zinc-100 px-4 py-2.5 text-center text-xs font-bold text-zinc-50 dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition duration-150 shadow-sm">
               Contact Me
             </a>
           </div>
@@ -150,16 +155,16 @@ export default function Navigation() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-zinc-800/60 bg-[#121316]/75 backdrop-blur-md">
+      <header className="sticky top-0 z-40 w-full border-b border-zinc-200/80 dark:border-zinc-800/60 bg-white/80 dark:bg-[#121316]/75 backdrop-blur-md transition-colors">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-3.5">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl p-[1.5px] transition-all duration-200 hover:scale-[1.03] active:scale-95"
+              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl p-[1.5px] transition-all duration-200 hover:scale-[1.03] active:scale-95 cursor-pointer"
               aria-label="Open profile modal">
               <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#10b981_0%,#047857_25%,#34d399_50%,#064e3b_75%,#10b981_100%)]" />
 
-              <div className="relative flex h-full w-full items-center justify-center rounded-[11px] bg-[#16171a]">
+              <div className="relative flex h-full w-full items-center justify-center rounded-[11px] bg-zinc-100 dark:bg-[#16171a]">
                 <Image
                   src="/images/profile/samson-sisay.jpg"
                   alt="Samson Sisay"
@@ -167,7 +172,7 @@ export default function Navigation() {
                   height={36}
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
-                  className="h-full w-full rounded-[11px] object-cover filter brightness-95 select-none pointer-events-none"
+                  className="h-full w-full rounded-[11px] object-cover filter brightness-95 dark:brightness-95 select-none pointer-events-none"
                 />
                 <div
                   className="absolute inset-0 z-10 select-none"
@@ -177,15 +182,15 @@ export default function Navigation() {
             </button>
 
             <div className="flex flex-col select-none">
-              <span className="text-sm font-semibold tracking-tight text-zinc-100">
+              <span className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Samson Sisay
               </span>
               <div className="flex items-center gap-1.5">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60 dark:bg-emerald-400/60 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
                 </span>
-                <span className="font-mono text-[10px] tracking-wide text-emerald-400/90">
+                <span className="font-mono text-[10px] tracking-wide text-emerald-700 dark:text-emerald-400/90 font-medium dark:font-normal">
                   Available to work
                 </span>
               </div>
@@ -197,7 +202,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-zinc-400 hover:text-emerald-400 transition-colors duration-150">
+                className="text-zinc-600 hover:text-emerald-600 dark:text-zinc-400 dark:hover:text-emerald-400 transition-colors duration-150">
                 {link.name}
               </Link>
             ))}
@@ -205,7 +210,7 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="relative h-9 w-9 flex items-center justify-center rounded-lg text-zinc-400 hover:bg-zinc-800/40 hover:text-zinc-100 md:hidden transition-colors"
+            className="relative h-9 w-9 flex items-center justify-center rounded-lg text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800/40 dark:hover:text-zinc-100 md:hidden transition-colors cursor-pointer"
             aria-label="Toggle menu">
             {/* Hamburger Icon */}
             <svg
@@ -249,17 +254,17 @@ export default function Navigation() {
         <div
           className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out md:hidden ${
             isMenuOpen
-              ? "grid-rows-[1fr] opacity-100 border-b border-zinc-800/80"
+              ? "grid-rows-[1fr] opacity-100 border-b border-zinc-200/80 dark:border-zinc-800/80"
               : "grid-rows-[0fr] opacity-0 border-b border-transparent"
           }`}>
-          <div className="overflow-hidden bg-[#121316]">
+          <div className="overflow-hidden bg-white/95 dark:bg-[#121316]">
             <nav className="flex flex-col space-y-3.5 px-4 py-4 font-mono text-xs">
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-zinc-400 hover:text-emerald-400 transition-colors">
+                  className="text-zinc-600 hover:text-emerald-600 dark:text-zinc-400 dark:hover:text-emerald-400 transition-colors">
                   {link.name}
                 </a>
               ))}
