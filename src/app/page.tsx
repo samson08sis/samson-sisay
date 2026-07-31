@@ -1,5 +1,6 @@
 // "use client";
 
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import ProjectCard from "@/components/ProjectCard";
@@ -308,6 +309,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
