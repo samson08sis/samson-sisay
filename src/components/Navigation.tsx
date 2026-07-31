@@ -78,7 +78,7 @@ function ProfileCard({
               {/* Status Indicator */}
               <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 border border-emerald-500/30 dark:border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-mono tracking-wide text-emerald-700 dark:text-emerald-400">
                 <span className="h-1 w-1 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
-                status: ready_for_hire
+                available
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function Navigation() {
                 Samson Sisay
               </span>
               <div className="flex items-center gap-1.5">
-                <span className="relative flex h-1.5 w-1.5">
+                <span className="relative flex h-1.5 w-1.5 justify-center items-center">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60 dark:bg-emerald-400/60 opacity-75" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
                 </span>
