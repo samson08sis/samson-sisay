@@ -9,7 +9,7 @@ export default function ThemeToggle({ isDarkMode, onChange }: Props) {
       <button
         onClick={onChange}
         aria-label="Toggle theme mode"
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-border-line bg-bg-card shadow-lg transition-transform hover:scale-105 active:scale-95">
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-border-line bg-bg-card shadow-lg transition-transform hover:scale-105 active:scale-95 cursor-pointer">
         <div
           className={`relative flex items-center justify-center transition-transform duration-500 ease-out ${
             isDarkMode ? "-rotate-180 scale-100" : "rotate-0 scale-100"
