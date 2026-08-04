@@ -15,7 +15,10 @@ export default function Hero() {
         {/* Main Headline */}
         <h1 className="text-4xl font-extrabold tracking-tight text-text-main sm:text-6xl leading-[1.05]">
           Building fast, predictable <br className="hidden sm:inline" />
-          digital interfaces.
+          <span className="bg-linear-to-r from-emerald-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent">
+            digital systems
+          </span>{" "}
+          & interfaces.
         </h1>
 
         {/* Subtitle / Bio */}
