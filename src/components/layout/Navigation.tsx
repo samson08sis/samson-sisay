@@ -65,7 +65,8 @@ export default function Navigation({ status }: Props) {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60 dark:bg-emerald-400/60 opacity-75" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
                 </span>
-                <span className="font-mono text-[10px] tracking-wide text-emerald-700 dark:text-emerald-400/90 font-medium dark:font-normal">
+                <span
+                  className={`font-mono text-[10px] tracking-wide ${config.styles.text} font-medium dark:font-normal`}>
                   {config.label}
                 </span>
               </div>

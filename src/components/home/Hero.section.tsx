@@ -67,7 +67,7 @@ function StatusPill({ status, className = "" }: StatusPillProps) {
           status !== "UNAVAILABLE" ? "animate-pulse" : ""
         }`}
       />
-      <span>status: {config.label}</span>
+      <span>status: {config.t_label}</span>
     </div>
   );
 }
