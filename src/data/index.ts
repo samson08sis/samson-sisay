@@ -1,6 +1,6 @@
 import type { Education, Project, Skill, Status } from "@/types";
 
-export const PROJECTS: Project[] = [
+export const projects: Project[] = [
   {
     id: "1",
     title: "Local-First AI Health Tracker",
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
 ];
 
 // Specializations data
-export const SKILLS: Skill[] = [
+export const skills: Skill[] = [
   {
     title: "Full-Stack Web Development",
     description:
@@ -56,7 +56,7 @@ export const SKILLS: Skill[] = [
   },
 ];
 
-export const EDUCATION: Education[] = [
+export const education: Education[] = [
   {
     title: "B.Sc. in Computer Science",
     year: "2022 - 2026",
@@ -80,6 +80,6 @@ export const EDUCATION: Education[] = [
   },
 ];
 
-export const STATUS: Status = {
-  availability: "AVAILABLE",
+export const status: Status = {
+  availability: "LIMITED",
 };
