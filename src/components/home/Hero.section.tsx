@@ -1,16 +1,23 @@
+import { AVAILABILITY_CONFIG } from "@/data/constants";
+import { Availability } from "@/types";
 import Link from "next/link";
 
-export default function Hero() {
+interface Props {
+  status: Availability;
+}
+
+interface StatusPillProps {
+  status: Availability;
+  className?: string;
+}
+
+export default function Hero({ status }: Props) {
   return (
     <section
       id="home"
       className="py-20 md:py-28 flex flex-col justify-center text-center md:text-left border-b border-border-line transition-colors">
       <div className="max-w-3xl space-y-6">
-        {/* Status Pill */}
-        <div className="inline-flex mx-auto md:mx-0 items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[11px] font-mono tracking-wide text-emerald-600 dark:text-emerald-400 w-fit">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
-          status: active
-        </div>
+        <StatusPill status={status} />
 
         {/* Main Headline */}
         <h1 className="text-4xl font-extrabold tracking-tight text-text-main sm:text-6xl leading-[1.05]">
@@ -46,5 +53,21 @@ export default function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function StatusPill({ status, className = "" }: StatusPillProps) {
+  const config = AVAILABILITY_CONFIG[status] ?? AVAILABILITY_CONFIG.AVAILABLE;
+
+  return (
+    <div
+      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-mono tracking-wide w-fit mx-auto md:mx-0 ${config.styles.border} ${config.styles.bg} ${config.styles.text} ${className}`}>
+      <span
+        className={`h-1.5 w-1.5 rounded-full ${config.styles.dot} ${
+          status !== "UNAVAILABLE" ? "animate-pulse" : ""
+        }`}
+      />
+      <span>status: {config.label}</span>
+    </div>
   );
 }

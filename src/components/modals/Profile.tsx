@@ -1,15 +1,20 @@
 "use client";
 
+import { AVAILABILITY_CONFIG } from "@/data/constants";
+import { Availability } from "@/types";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 interface Props {
   visible: boolean;
+  status: Availability;
   onClose: () => void;
 }
 
-export default function ProfileCardModal({ visible, onClose }: Props) {
+export default function ProfileCardModal({ visible, status, onClose }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+
+  const config = AVAILABILITY_CONFIG[status] ?? AVAILABILITY_CONFIG.AVAILABLE;
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -83,10 +88,20 @@ export default function ProfileCardModal({ visible, onClose }: Props) {
               </div>
 
               {/* Status Indicator */}
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 border border-emerald-500/30 dark:border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-mono tracking-wide text-emerald-700 dark:text-emerald-400">
+              <div
+                className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] font-mono tracking-wide w-fit mx-auto md:mx-0 ${config.styles.border} ${config.styles.bg} ${config.styles.text}`}>
+                <span
+                  className={`h-1 w-1 rounded-full ${config.styles.dot} ${
+                    status !== "UNAVAILABLE" ? "animate-pulse" : ""
+                  }`}
+                />
+                <span>{config.t_label}</span>
+              </div>
+
+              {/* <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 border border-emerald-500/30 dark:border-emerald-500/20 px-2.5 py-0.5 text-[10px] font-mono tracking-wide text-emerald-700 dark:text-emerald-400">
                 <span className="h-1 w-1 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                 available
-              </div>
+              </div> */}
             </div>
           </div>
 

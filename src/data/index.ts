@@ -1,4 +1,4 @@
-import type { Education, Project, Skill } from "@/types";
+import type { Education, Project, Skill, Status } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
@@ -79,3 +79,7 @@ export const EDUCATION: Education[] = [
       "Immersive specialization detailing RAG pattern integration, dynamic data streaming architectures, and low-footprint client state execution layers.",
   },
 ];
+
+export const STATUS: Status = {
+  availability: "AVAILABLE",
+};

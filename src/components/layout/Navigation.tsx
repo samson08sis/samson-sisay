@@ -4,21 +4,29 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProfileCardModal from "../modals/Profile";
+import { Availability } from "@/types";
+import { AVAILABILITY_CONFIG } from "@/data/constants";
 
 interface NavLink {
   name: string;
   href: string;
 }
 
-export default function Navigation() {
+const links: NavLink[] = [
+  { name: "~/home", href: "#home" },
+  { name: "~/projects", href: "#projects" },
+  { name: "~/contact", href: "#contact" },
+];
+
+interface Props {
+  status: Availability;
+}
+
+export default function Navigation({ status }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const links: NavLink[] = [
-    { name: "~/home", href: "#home" },
-    { name: "~/projects", href: "#projects" },
-    { name: "~/contact", href: "#contact" },
-  ];
+  const config = AVAILABILITY_CONFIG[status] ?? AVAILABILITY_CONFIG.AVAILABLE;
 
   return (
     <>
@@ -58,7 +66,7 @@ export default function Navigation() {
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
                 </span>
                 <span className="font-mono text-[10px] tracking-wide text-emerald-700 dark:text-emerald-400/90 font-medium dark:font-normal">
-                  Available to work
+                  {config.label}
                 </span>
               </div>
             </div>
@@ -141,6 +149,7 @@ export default function Navigation() {
       </header>
       <ProfileCardModal
         visible={isModalOpen}
+        status={status}
         onClose={() => setIsModalOpen(false)}
       />
     </>

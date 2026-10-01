@@ -19,3 +19,20 @@ export interface Education {
   description: string;
   year: string;
 }
+
+export type Availability = "AVAILABLE" | "LIMITED" | "UNAVAILABLE";
+
+export interface Status {
+  availability: Availability;
+}
+
+export interface AvailabilityConfig {
+  label: string;
+  t_label: string;
+  styles: {
+    border: string;
+    bg: string;
+    text: string;
+    dot: string;
+  };
+}
