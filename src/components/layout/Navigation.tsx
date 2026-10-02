@@ -56,7 +56,7 @@ export default function Navigation({ status }: Props) {
               </div>
             </button>
 
-            <div className="flex flex-col select-none">
+            <Link href="/" className="flex flex-col select-none">
               <span className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Samson Sisay
               </span>
@@ -70,7 +70,7 @@ export default function Navigation({ status }: Props) {
                   {config.label}
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
 
           <nav className="hidden md:flex space-x-6 font-mono text-xs">
