@@ -2,7 +2,10 @@
 
 import { NextStudio } from "next-sanity/studio";
 import config from "@/../sanity.config";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function CMS() {
-  return <NextStudio config={config} />;
+  const { theme } = useTheme();
+
+  return <NextStudio config={config} scheme={theme} />;
 }

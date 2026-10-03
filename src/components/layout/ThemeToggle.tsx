@@ -1,9 +1,12 @@
+import { Theme } from "@/context/ThemeContext";
+
 type Props = {
-  isDarkMode: boolean;
+  theme: Theme;
   onChange: () => void;
 };
 
-export default function ThemeToggle({ isDarkMode, onChange }: Props) {
+export default function ThemeToggle({ theme, onChange }: Props) {
+  const isDark = theme === "dark";
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <button
@@ -12,12 +15,12 @@ export default function ThemeToggle({ isDarkMode, onChange }: Props) {
         className="flex h-10 w-10 items-center justify-center rounded-full border border-border-line bg-bg-card shadow-lg transition-transform hover:scale-105 active:scale-95 cursor-pointer">
         <div
           className={`relative flex items-center justify-center transition-transform duration-500 ease-out ${
-            isDarkMode ? "-rotate-180 scale-100" : "rotate-0 scale-100"
+            isDark ? "-rotate-180 scale-100" : "rotate-0 scale-100"
           }`}>
           {/* Sun Icon for Light Mode option */}
           <svg
             className={`h-4 w-4 transition-all duration-300 ${
-              isDarkMode
+              isDark
                 ? "opacity-100 rotate-0 scale-100 text-amber-400"
                 : "opacity-0 rotate-90 scale-50 absolute"
             }`}
@@ -34,7 +37,7 @@ export default function ThemeToggle({ isDarkMode, onChange }: Props) {
           {/* Moon Icon for Dark Mode option */}
           <svg
             className={`h-4 w-4 transition-all duration-300 ${
-              isDarkMode
+              isDark
                 ? "opacity-0 rotate-90 scale-50 absolute"
                 : "opacity-100 rotate-0 scale-100 text-emerald-400"
             }`}
