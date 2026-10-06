@@ -9,8 +9,6 @@ import Education from "@/components/home/Education.section";
 
 import { getData } from "@/services/api";
 
-export const revalidate = 86400; // 24 hrs
-
 export default async function Home() {
   const data = await getData();
 
