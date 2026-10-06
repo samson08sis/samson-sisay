@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Technical Architecture Tag Badges */}
         <div className="mt-4 flex flex-wrap gap-1">
-          {project.tags.map((tag) => (
+          {(project.tags || []).map((tag) => (
             <span
               key={tag}
               className="rounded bg-bg-app border border-border-line px-2 py-0.5 font-mono text-[9px] text-text-muted group-hover:border-border-line/80 transition-colors">

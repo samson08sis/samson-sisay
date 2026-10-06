@@ -2,7 +2,7 @@ import type { Education, Project, Skill, Status } from "@/types";
 
 export const projects: Project[] = [
   {
-    id: "1",
+    _id: "1",
     title: "Local-First AI Health Tracker",
     description:
       "A cross-platform mobile application utilizing reactive offline databases. Features sandboxed local AI models for real-time health data summarization, automated biometric trend analysis, and compliant CSV/JSON data export schemas.",
@@ -10,7 +10,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/samson08sis",
   },
   {
-    id: "2",
+    _id: "2",
     title: "WWTP Industrial Digitalization Platform",
     description:
       "A complete real-time monitoring system built for Waste-Water Treatment Plants. Integrates a lightweight Expo mobile field data entry application with a high-throughput, low-latency operational dashboard for analytics.",
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     liveUrl: "https://example.com",
   },
   {
-    id: "3",
+    _id: "3",
     title: "Enterprise Architecture & Chatbot System",
     description:
       "A robust production web platform configured with an isolated Content Management System (CMS) and an intelligent, context-aware Retrieval-Augmented Generation (RAG) support chatbot handling dynamic data indexing.",
