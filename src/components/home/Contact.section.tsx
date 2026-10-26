@@ -1,4 +1,11 @@
-export default function ContactMe() {
+import { Contact } from "@/types";
+import Link from "next/link";
+
+interface Props {
+  contact: Contact;
+}
+
+export default function ContactMe({ contact }: Props) {
   return (
     <section
       id="contact"
@@ -20,7 +27,7 @@ export default function ContactMe() {
           <div>
             <span className="text-text-muted">$ echo $DEVELOPER_ADDRESS</span>
             <p className="mt-1 text-sm font-sans font-semibold text-text-main pl-4 border-l-2 border-border-line">
-              Addis Ababa, Ethiopia
+              {contact.address}
             </p>
           </div>
 
@@ -31,42 +38,46 @@ export default function ContactMe() {
             <div className="mt-2 rounded-lg bg-bg-app border border-border-line p-4 space-y-2 text-[11px] text-text-muted transition-colors">
               <div className="flex justify-between items-center py-1 border-b border-border-line/40">
                 <span className="text-text-muted">email:</span>
-                <a
-                  href="mailto:sams1307wolde@gmail.com"
+                <Link
+                  href={`"mailto:${contact.email}`}
                   className="text-emerald-600 dark:text-emerald-400 hover:underline font-sans font-medium">
-                  sams1307wolde@gmail.com
-                </a>
+                  {contact.email}
+                </Link>
               </div>
-              <div className="flex justify-between items-center py-1 border-b border-border-line/40">
-                <span className="text-text-muted">github:</span>
-                <a
-                  href="https://github.com/samson08sis"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-text-main hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                  github.com/samson08sis
-                </a>
-              </div>
-              <div className="flex justify-between items-center py-1">
-                <span className="text-text-muted">linkedin:</span>
-                <a
-                  href="https://www.linkedin.com/in/samson-sisay/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-text-main hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                  linkedin.com/in/samsonsisay
-                </a>
-              </div>
+              {contact.github && (
+                <div className="flex justify-between items-center py-1 border-b border-border-line/40">
+                  <span className="text-text-muted">github:</span>
+                  <Link
+                    href={contact.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-text-main hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                    {contact.github.slice(8)}
+                  </Link>
+                </div>
+              )}
+              {contact.linkedin && (
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-text-muted">linkedin:</span>
+                  <Link
+                    href={contact.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-text-main hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                    {contact.linkedin.slice(12)}
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
 
           {/* Call To Action Button */}
           <div className="pt-2 text-center sm:text-left">
-            <a
-              href="mailto:sams1307wolde@gmail.com"
+            <Link
+              href={`"mailto:${contact.email}`}
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded border border-emerald-500/40 bg-emerald-500/10 px-6 py-3 text-center text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all duration-150">
               <span>Contact Me</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default async function Home() {
         <Skills skills={data.skills} />
         <Projects projects={data.projects} />
         <Education education={data.education} />
-        <ContactMe />
+        <ContactMe contact={data.contact} />
       </main>
       <Footer />
     </div>

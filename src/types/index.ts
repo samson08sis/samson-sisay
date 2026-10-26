@@ -26,6 +26,13 @@ export interface Status {
   availability: Availability;
 }
 
+export interface Contact {
+  address: string;
+  email: string;
+  github?: string;
+  linkedin?: string;
+}
+
 export interface AvailabilityConfig {
   label: string;
   t_label: string;

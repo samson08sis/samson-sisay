@@ -1,10 +1,11 @@
-import { Status, Skill, Project, Education } from "@/types";
+import { Status, Skill, Project, Education, Contact } from "@/types";
 
 export interface Result {
   status: Status;
   skills: Skill[];
   projects: Project[];
   education: Education[];
+  contact: Contact;
 }
 export async function getData(): Promise<Result> {
   const res = await fetch(`${process.env.URL}/api/data`, {

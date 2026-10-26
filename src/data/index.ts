@@ -1,4 +1,4 @@
-import type { Education, Project, Skill, Status } from "@/types";
+import type { Contact, Education, Project, Skill, Status } from "@/types";
 
 export const projects: Project[] = [
   {
@@ -80,6 +80,13 @@ export const education: Education[] = [
   },
 ];
 
+export const contact: Contact = {
+  address: "Addis Ababa, Ethiopia",
+  email: "sams13bi@gmail.com",
+  github: "https://github.com/samson08sis",
+  linkedin: "https://www.linkedin.com/in/samson-sisay",
+};
+
 export const status: Status = {
-  availability: "LIMITED",
+  availability: "AVAILABLE",
 };
