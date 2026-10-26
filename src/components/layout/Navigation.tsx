@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProfileCardModal from "../modals/Profile";
-import { Availability } from "@/types";
+import { Availability, Contact } from "@/types";
 import { AVAILABILITY_CONFIG } from "@/data/constants";
 
 interface NavLink {
@@ -20,9 +20,10 @@ const links: NavLink[] = [
 
 interface Props {
   status: Availability;
+  contact: Contact;
 }
 
-export default function Navigation({ status }: Props) {
+export default function Navigation({ status, contact }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -31,6 +32,9 @@ export default function Navigation({ status }: Props) {
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-zinc-200/80 dark:border-zinc-800/60 bg-white/80 dark:bg-[#121316]/75 backdrop-blur-md transition-colors">
+        <div className="absolute top-0 left-0 h-px w-full overflow-hidden">
+          <div className="transition-bar"></div>
+        </div>
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-3.5">
             <button
@@ -151,6 +155,7 @@ export default function Navigation({ status }: Props) {
       <ProfileCardModal
         visible={isModalOpen}
         status={status}
+        contact={contact}
         onClose={() => setIsModalOpen(false)}
       />
     </>

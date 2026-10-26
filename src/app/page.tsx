@@ -16,7 +16,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-bg-app text-text-main transition-colors duration-200 antialiased selection:bg-emerald-500/20 selection:text-emerald-400">
-      <Navigation status={data.status.availability} />
+      <Navigation contact={data.contact} status={data.status.availability} />
       <main className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Page Sections */}
         <Hero status={data.status.availability} />
@@ -25,7 +25,7 @@ export default async function Home() {
         <Education education={data.education} />
         <ContactMe contact={data.contact} />
       </main>
-      <Footer />
+      <Footer contact={data.contact} />
     </div>
   );
 }

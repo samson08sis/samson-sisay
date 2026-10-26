@@ -1,17 +1,24 @@
 "use client";
 
 import { AVAILABILITY_CONFIG } from "@/data/constants";
-import { Availability } from "@/types";
+import { Availability, Contact } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 interface Props {
   visible: boolean;
+  contact: Contact;
   status: Availability;
   onClose: () => void;
 }
 
-export default function ProfileCardModal({ visible, status, onClose }: Props) {
+export default function ProfileCardModal({
+  visible,
+  contact,
+  status,
+  onClose,
+}: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   const config = AVAILABILITY_CONFIG[status] ?? AVAILABILITY_CONFIG.AVAILABLE;
@@ -115,35 +122,38 @@ export default function ProfileCardModal({ visible, status, onClose }: Props) {
           <div className="mt-5 rounded-lg bg-zinc-50 dark:bg-[#121316] border border-zinc-200 dark:border-zinc-800/60 p-4 space-y-2.5 font-mono text-[11px] text-zinc-600 dark:text-zinc-400">
             <div className="flex items-center justify-between py-1 border-b border-zinc-200 dark:border-zinc-900">
               <span className="text-zinc-400 dark:text-zinc-500">EMAIL:</span>
-              <a
-                href="mailto:sams1307wolde@gmail.com"
+              <Link
+                href={`mailto:${contact.email}`}
                 className="text-zinc-800 dark:text-zinc-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors font-sans font-medium">
-                sams1307wolde@gmail.com
-              </a>
+                {contact.email}
+              </Link>
             </div>
             <div className="flex items-center justify-between py-1 border-b border-zinc-200 dark:border-zinc-900">
               <span className="text-zinc-400 dark:text-zinc-500">LOCALE:</span>
               <span className="text-zinc-700 dark:text-zinc-300 font-sans">
-                Addis Ababa, ET
+                {contact.address}
               </span>
             </div>
-            <div className="flex items-center justify-between py-1">
-              <span className="text-zinc-400 dark:text-zinc-500">
-                TELEMETRY:
-              </span>
-              <span className="text-emerald-600 dark:text-emerald-400/90 font-medium">
-                [GitHub, LinkedIn]
-              </span>
-            </div>
+            {(contact.github || contact.linkedin) && (
+              <div className="flex items-center justify-between py-1">
+                <span className="text-zinc-400 dark:text-zinc-500">
+                  TELEMETRY:
+                </span>
+                <span className="text-emerald-600 dark:text-emerald-400/90 font-medium">
+                  [{contact.github && "Github"},{" "}
+                  {contact.linkedin && "LinkedIn"}]
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Core Handshake CTA Block */}
           <div className="mt-6">
-            <a
-              href="mailto:sams1307wolde@gmail.com"
+            <Link
+              href={`mailto:${contact.email}`}
               className="flex w-full items-center justify-center rounded bg-zinc-900 dark:bg-zinc-100 px-4 py-2.5 text-center text-xs font-bold text-zinc-50 dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition duration-150 shadow-sm">
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
       </div>
