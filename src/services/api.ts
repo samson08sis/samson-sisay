@@ -1,4 +1,5 @@
 import { Status, Skill, Project, Education, Contact } from "@/types";
+import * as Data from "@/data";
 
 export interface Result {
   status: Status;
@@ -8,16 +9,17 @@ export interface Result {
   contact: Contact;
 }
 export async function getData(): Promise<Result> {
-  const res = await fetch(`${process.env.URL}/api/data`, {
-    next: {
-      revalidate: 86400, // 24hrs
-      tags: ["data"], // revalidation tag
-    },
-  });
+  return Data;
+  // const res = await fetch(`${process.env.URL}/api/data`, {
+  //   next: {
+  //     revalidate: 86400, // 24hrs
+  //     tags: ["data"], // revalidation tag
+  //   },
+  // });
 
-  if (!res.ok) {
-    throw new Error(`[ISR Error] Status request returned HTTP ${res.status}`);
-  }
+  // if (!res.ok) {
+  //   throw new Error(`[ISR Error] Status request returned HTTP ${res.status}`);
+  // }
 
-  return await res.json();
+  // return await res.json();
 }
